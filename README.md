@@ -4,7 +4,7 @@
 ---
 * [Meteor常用命令手册](./meteor.md)
 * [Node.js 文档](./nodejs.md)
-* [HTML5 文档](./html5.md)
+* [HTML5 技术框架](./html5.md)
 * [JavaScript 文档](./javascript.md)
 
 编辑工具:
