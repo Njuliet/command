@@ -257,8 +257,10 @@ get this:
  * `atom-beautify`：美化代码，空格啊什么什么的
  * `autoclose-html`：HTML自动补全闭标签
  * `file-icons`: 增加许多图标,在侧边蓝文件名前面的icon,,很赞
- * `autocomplete-plus`: 自动补全插件, 有HTML, CSS, python 等
+ * `autocomplete-modules`: 自动补全插件, 有HTML, CSS, python 等
  * `highlight-selected`: 高亮当前所选的文字, 双击后全文这个词或变量都会变高亮.
  * `linter`: 检察语法错误, 有less等.
  * `Nuclide`: facebook 开源的开发IDE.
  * `Open In Browser`: 右键打开浏览器.
+ * `atom-clock`: 在bar显示 时间
+
