@@ -12,18 +12,39 @@
 | 注册名称 | name | string | 是 | | 唯一性， 邮箱|
 | 昵称 | nice | string | 是 | | |
 | 密码 | passwd | string | 是 | | |
+| 生日 | bod | date | 否 | 19900101 | |
+| 职业 | job | string | 否 | | |
 
 
 
 ### 问答信息
 
+| 字段 | 英语 | 类型 | 是否必填 | 默认值 | 备注|
+|-----|------|-------|-------|---------|-----|
+| 问题标题 | title | string | 是 | | |
+| 问题内容 | context | string | y | | |
+| 提问时间 | time | date | 否 | 现在时间 | |
+| 浏览次数 | viewnumber | number | N | 0 | |
+| 回复次数 | returnnumber | number | N | 0 | |
+| 点赞次数 | zannumber | number | N | 0 | |
+| 解决状态 | reslove | boolen | N | flase |  |
+
+
+
+
 
 
 ### 回答信息
 
-1. 问题标题
-1. 问题内容
-1. 提问时间
+
+| 字段 | 英语 | 类型 | 是否必填 | 默认值 | 备注|
+|-----|------|-------|-------|---------|-----|
+| 问题标题 | title | string | 是 | | |
+| 问题ID | an_id | id | 是 | 问题ID | |
+| 回答内容 | context | string | y | | |
+| 回答时间 | time | date | 否 | 现在时间 | |
+| 点赞次数 | zannumber | number | N | 0 | |
+| 解决状态 | reslove | boolen | N | flase |  |
 
 
 
