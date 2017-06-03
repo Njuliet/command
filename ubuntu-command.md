@@ -115,6 +115,8 @@ $ sudo localedef -i en_GB -f UTF-8 en_US.UTF-8
 ```
 
 
+# http 转 https 服务器配置
+
 ## 开发机配置
 
 修改/etc/hosts，加上：
@@ -123,7 +125,7 @@ $ sudo localedef -i en_GB -f UTF-8 en_US.UTF-8
 127.0.0.1 dev.badui.com
 ```
 #### 推荐一个频繁切换hosts的小工具[[SwitchHosts](http://oldj.github.io/SwitchHosts/)]
-< img src='https://cloud.githubusercontent.com/assets/4111893/26032565/0e388dd2-38c9-11e7-8230-c595534dec95.png' width='300px'></img>
+![](https://cloud.githubusercontent.com/assets/4111893/26032565/0e388dd2-38c9-11e7-8230-c595534dec95.png)
 
 ---
 在本地安装nginx，配置文件加上：
