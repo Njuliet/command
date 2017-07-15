@@ -193,6 +193,53 @@ $ redis-cli
 ```
 
 
+## nodejs 使用 redis
+先要使用 `express -e` 创建项目, 并使用 `npm` 命令安装`nodejs`模块.
+
+```sh
+$ express -e redis-node
+$ cd redis-node
+$ npm install
+```
+
+需要安装 `nodejs` 的 `redis` 库文件.
+
+```sh
+$ npm i redis --save
+```
+
+在当前项目下创建 `redis` 目录, 并在目录下创建 `index.js` 文件. (当前目录在 `redis` 项目目录.)
+
+```sh
+$ mkdir redis
+$ cd redis
+$ touch index.js
+```
+
+我们现在需要编写代码, 连接 `redis` 服务器.
+
+下面是 `redis/index.js` 文件内容.
+
+```js
+const redis = require('redis');
+const client= redis.createClient({
+  host: 'redis-13302.c14.us-east-1-2.ec2.cloud.redislabs.com',
+  port: 13302,
+  password:'asdfgh'
+});
+
+client.on('connect',(err)=>{
+  if(err){
+    console.log('Redis connect error');
+    console.log(err);
+  }else{
+    console.log('Redis connect OK');
+  }
+});
+
+module.exports = client;
+```
+
 
 ## 参考文档
 * [ubuntu1604安装配置redis](https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-redis-on-ubuntu-16-04)
