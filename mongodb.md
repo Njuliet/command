@@ -76,3 +76,55 @@ terminate called after throwing an instance of 'std::runtime_error'
 ```
 export LC_ALL="C"
 ```
+
+
+
+```bash
+#!/bin/sh
+#title         :mongod
+#author        :Bertrand Martel
+#date          :15/08/2015
+#description   :start/stop/restart mongod
+#########################################
+### install   :  cp mongod /etc/init.d/
+#                update-rc.d mongod defaults
+### uninstall :  update-rc.d -f mongodb remove
+
+PATH_TO_MONGO=/usr/bin/mongod
+
+#file containing all mongodb pid
+PID_FILE=/tmp/mongodb.pid
+
+case "$1" in
+    start)
+        echo "Starting mongodb service..."
+
+        COMMAND_TO_RUN=`start-stop-daemon -S -b -m -p $PID_FILE -x $PATH_TO_MONGO& :`
+        setsid sh -c $COMMAND_TO_RUN> /dev/null 2>&1 < /dev/null
+
+        echo -e "\E[31;33m[ OK ]\E[0m"
+        ;;
+    stop)
+        echo "Stopping mongodb service..."
+
+        start-stop-daemon -K -q -p $PID_FILE
+
+        echo -e "\E[31;33m[ OK ]\E[0m"
+        ;;
+    restart|reload)
+        "$0" stop
+        "$0" start
+        ;;
+    *)
+        echo $"Usage: $0 {start|stop|restart}"
+        exit 1
+esac
+
+exit $?
+```
+自动在ubuntu16.04系统启动mongodb
+```sh
+cp mongod /etc/init.d/
+
+update-rc.d mongod defaults
+```
