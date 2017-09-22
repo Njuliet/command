@@ -39,17 +39,6 @@ sudo apt-get update
 sudo apt-get install -y mongodb-enterprise
 ```
 
-5. Remove Data
-```sh
-apt-get purge mongodb-enterprise*
-```
-delete log file
-
-```sh
-sudo rm -r /var/log/mongodb
-sudo rm -r /var/lib/mongodb
-```
-
 
 mongodb command:
 1. start mongodb
@@ -114,6 +103,19 @@ cp mongod.sh /etc/init.d/mongod
 chmod 755 /etc/init.d//mongod
 update-rc.d mongod defaults
 ```
+
+
+### Remove Mongodb 
+```sh
+apt-get purge mongodb-enterprise*
+```
+delete log file
+
+```sh
+sudo rm -r /var/log/mongodb
+sudo rm -r /var/lib/mongodb
+```
+
 
 # nginx
 
