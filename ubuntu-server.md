@@ -39,7 +39,7 @@ sudo apt-get update
 sudo apt-get install -y mongodb-enterprise
 ```
 
-5. Rebmove Data
+5. Remove Data
 ```sh
 apt-get purge mongodb-enterprise*
 ```
