@@ -62,6 +62,59 @@ mongodb config:
 # vim /etc/mongodb.conf
 ```
 
+### bootstart mongodb
+
+```sh
+root@iZrj978n2nwntexfoyz539Z:~# cat mongod.sh
+#!/bin/sh
+#title         :mongod.sh
+#author        :Richard Wang
+#date          :22/09/2017
+#description   :start/stop/restart mongod
+#########################################
+### install   :  cp mongod /etc/init.d/
+#                update-rc.d mongod defaults
+### uninstall :  update-rc.d -f mongodb remove
+
+PATH_TO_MONGO=/usr/bin/mongod
+
+#file containing all mongodb pid
+PID_FILE=/tmp/mongodb.pid
+
+case "$1" in
+	start)
+		echo "Starting mongodb service..."
+
+		COMMAND_TO_RUN=`start-stop-daemon -S -b -m -p $PID_FILE -x $PATH_TO_MONGO& :`
+		setsid sh -c $COMMAND_TO_RUN> /dev/null 2>&1 < /dev/null
+
+		echo -e "\E[31;33m[ OK ]\E[0m"
+		;;
+	stop)
+		echo "Stopping mongodb service..."
+
+		start-stop-daemon -K -q -p $PID_FILE
+
+		echo -e "\E[31;33m[ OK ]\E[0m"
+		;;
+	restart|reload)
+		"$0" stop
+		"$0" start
+		;;
+	*)
+		echo $"Usage: $0 {start|stop|restart}"
+		exit 1
+esac
+
+exit $?
+```
+install monod
+```sh
+cp mongod.sh /etc/init.d/mongod
+chmod 755 /etc/init.d//mongod
+update-rc.d mongod defaults
+```
+
 # nginx
 
 1. install nginx
