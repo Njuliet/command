@@ -88,14 +88,14 @@ case "$1" in
 		COMMAND_TO_RUN=`start-stop-daemon -S -b -m -p $PID_FILE -x $PATH_TO_MONGO& :`
 		setsid sh -c $COMMAND_TO_RUN> /dev/null 2>&1 < /dev/null
 
-		echo -e "\E[31;33m[ OK ]\E[0m"
+		echo -e "Start mongodb server [ OK ]"
 		;;
 	stop)
 		echo "Stopping mongodb service..."
 
 		start-stop-daemon -K -q -p $PID_FILE
 
-		echo -e "\E[31;33m[ OK ]\E[0m"
+		echo -e "Stop mongodb server [ OK ]"
 		;;
 	restart|reload)
 		"$0" stop
