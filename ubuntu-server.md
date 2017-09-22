@@ -117,15 +117,41 @@ server {
 
 
 # 部署网站
+
 install tools git
+
 ```sh
 apt install git
 ```
 
 instal node.js tools
 
-> npm i yarn -g
-> npm i pm2 -g 
+```sh
+npm i yarn -g
+npm i pm2 -g 
+```sh
+
+download web project:
+
+```sh
+git clone url-for-project
+cd project-name
+```
+
+pm2 start:
+
+```sh
+pm2 start www/bin
+```
+
+pm2 show information:
+
+```sh
+pm2 show id
+```
+
+
+
 
 # redis
 
