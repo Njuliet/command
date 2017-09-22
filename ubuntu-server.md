@@ -129,7 +129,8 @@ instal node.js tools
 ```sh
 npm i yarn -g
 npm i pm2 -g 
-```sh
+```
+
 
 download web project:
 
