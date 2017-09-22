@@ -3,7 +3,7 @@
 需要新更新系统.
 ```sh
 # apt update
-$ apt install -y build-essential
+# apt install -y build-essential
 ```
 
 ### install node.js 
@@ -11,8 +11,8 @@ install node.js for v6.11.3
 
 1. 需要配置node.js源, 添加到服务器中.
 ```ssh
-$ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash - 
-$ apt install -y nodejs
+# curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash - 
+# apt install -y nodejs
 ```
 
 
@@ -64,6 +64,62 @@ mongodb config:
 
 
 ### nginx
+
+1. install nginx
+```sh
+# apt install nginx
+```
+
+2. nginx config
+
+http.conf 
+```sh
+vim /etc/nginx/sites-available/http.conf
+```
+http.conf:
+```sh
+server {
+	server_name xxx.com www.xxx.com
+	listen 80;
+	location / {
+		proxy_pass http://127.0.0.1:3000;
+	}
+}
+```
+
+ln
+```sh
+cd /etc/nginx/sites-enabled
+ln -s /etc/nginx/sites-available/http.conf
+```
+
+**https configure**:
+```sh
+server {
+	server_name xxx.com www.xxx.com;
+	listen 80;
+	return 301 https://$host$request_uri;
+}
+server {
+	listen 443;
+	ssl on;
+	server_name xxx.com www.xxx.com;
+	ssl_certificate   cert/xxx.pem;
+	ssl_certificate_key  cert/xxx.key;
+	ssl_session_timeout 5m;
+	ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
+	ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+	ssl_prefer_server_ciphers on;
+	location / {
+		proxy_pass http://127.0.0.1:3000;
+	}
+}
+```
+
+
+
+
+
 
 ### redis
 
