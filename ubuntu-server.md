@@ -1,12 +1,13 @@
 
-## ubuntu 16.04 64位
+# ubuntu 16.04 64位
 需要新更新系统.
 ```sh
 # apt update
 # apt install -y build-essential
 ```
 
-### install node.js 
+
+# install node.js 
 install node.js for v6.11.3
 
 1. 需要配置node.js源, 添加到服务器中.
@@ -15,8 +16,7 @@ install node.js for v6.11.3
 # apt install -y nodejs
 ```
 
-
-### install mongodb
+# install mongodb
 
 install mongodb enterprise
 
@@ -62,8 +62,7 @@ mongodb config:
 # vim /etc/mongodb.conf
 ```
 
-
-### nginx
+# nginx
 
 1. install nginx
 ```sh
@@ -119,9 +118,7 @@ server {
 
 
 
+# redis
 
-
-### redis
-
-### mysql
+# mysql
 
