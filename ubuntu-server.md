@@ -116,7 +116,16 @@ server {
 ```
 
 
+# 部署网站
+install tools git
+```sh
+apt install git
+```
 
+instal node.js tools
+
+> npm i yarn -g
+> npm i pm2 -g 
 
 # redis
 
