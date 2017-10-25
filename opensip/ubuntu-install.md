@@ -26,5 +26,5 @@ GIT clone of latest stable release (2.3):
 
 ## 1. install software package
 ```sh
-# apt install apache2 php5 php5-mysql php5-xmlrpc php-pear
+# apt install apache2 php7.0 php7.0-mysql php7.0-xmlrpc php-pear -y
 ```
