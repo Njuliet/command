@@ -2,7 +2,7 @@
 
 
 ## 1. install software package
-```sh
+```bash
 # apt install gcc make flex bison libmysqlclient-dev mysql-server libncurses5-dev libncursesw5-dev git vim -y
 ```
 You need set password for mysql.  // mysql2017
@@ -12,11 +12,11 @@ You need set password for mysql.  // mysql2017
 open brows https://www.opensips.org/Downloads/Downloads
 
 GIT clone of latest stable release (2.3):
-```sh
+```bash
 # git clone https://github.com/OpenSIPS/opensips.git -b 2.3 opensips-2.3
 ```
 ## 3. configure opensips for install
-```sh
+```bash
 # cd opensips-2.3
 # make menuconfig
 ``` 
@@ -25,7 +25,7 @@ GIT clone of latest stable release (2.3):
 # install opensip server web 
 
 ## 1. install software package
-```sh
+```bash
 # apt install apache2 php7.0 php7.0-mysql php7.0-xmlrpc php-pear -y
 ```
 
@@ -34,12 +34,12 @@ GIT clone of latest stable release (2.3):
 
 ## in mysql from opensips-cp mysql
 
-```sh
+```bash
 # mysql -Dopensips -p < opensips-cp/config/tools/admin/add_admin/ocp_admin_privileges.mysql
 ```
 ## register user admin 
 
-```sh
+```bash
 # mysql -u root -p
 Enter password:
 Welcome to the MySQL monitor.  Commands end with ; or \g.
