@@ -28,3 +28,12 @@ GIT clone of latest stable release (2.3):
 ```sh
 # apt install apache2 php7.0 php7.0-mysql php7.0-xmlrpc php-pear -y
 ```
+
+
+
+
+## in mysql from opensips-cp mysql
+
+```sh
+# mysql -Dopensips -p < opensips-cp/config/tools/admin/add_admin/ocp_admin_privileges.mysql
+```
