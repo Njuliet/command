@@ -37,3 +37,40 @@ GIT clone of latest stable release (2.3):
 ```sh
 # mysql -Dopensips -p < opensips-cp/config/tools/admin/add_admin/ocp_admin_privileges.mysql
 ```
+## register user admin 
+
+```sh
+# mysql -u root -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 44
+Server version: 5.7.20-0ubuntu0.16.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2017, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| opensips           |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.02 sec)
+
+mysql> use opensips
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> insert into ocp_admin_privileges (username,password,ha1,available_tools,permissions)values('admin', 'admin',md5('admin:admin'),'all','all');
+Query OK, 1 row affected (0.00 sec)
+```
