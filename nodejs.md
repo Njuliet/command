@@ -34,6 +34,9 @@ $ sudo n stable           //升级nodejs到stable版本
 总的来说，nvm有点类似于 Python 的 virtualenv 或者 Ruby 的 rvm，每个node版本的模块都会被安装在各自版本的沙箱里面（因此切换版本后模块需重新安装），因此考虑到需要时常对node版本进行切换测试兼容性和一些模块对node版本的限制，我选择了使用nvm作为管理工具，下面就来说说nvm的安装和使用过程。
 
 #### 安装nvm
+
+通下面的网址可以找到 nvm 最新的版本. [nvm最新的版本](https://github.com/creationix/nvm)
+
 ```bash
  $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.30.2/install.sh | bash
 ```
