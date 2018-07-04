@@ -130,11 +130,11 @@ mysql -h localhost -u root -p
 
 ## 创建数据库和用户
 
-DB_NAME = webdb
-USER_NAME = webdb_user
-REMOTE_IP = 10.0.15.25
-PASSWORD = password123
-PERMISSIONS = ALL
+* DB_NAME = webdb
+* USER_NAME = webdb_user
+* REMOTE_IP = 10.0.15.25
+* PASSWORD = password123
+* PERMISSIONS = ALL
 
 ```mysql
 ## CREATE DATABASE ##
