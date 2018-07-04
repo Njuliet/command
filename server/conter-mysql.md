@@ -150,6 +150,36 @@ mysql> GRANT ALL ON webdb.* TO 'webdb_user'@'10.0.15.25';
 mysql> FLUSH PRIVILEGES;
 ```
 
+## 修密码等级
+
+如果设置出现 `ERROR 1819 (HY000): Your password does not satisfy the current policy requirements` 错误信息, 是因为密码的等级设置过高, 需要将安全等降低或是重新用随机软件生成密码.
+
+```mysql
+
+## 查看密码安全等级
+mysql> set global validate_password.policy=0;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> SHOW VARIABLES LIKE 'validate_password%';
++--------------------------------------+-------+
+| Variable_name                        | Value |
++--------------------------------------+-------+
+| validate_password.check_user_name    | ON    |
+| validate_password.dictionary_file    |       |
+| validate_password.length             | 8     |
+| validate_password.mixed_case_count   | 1     |
+| validate_password.number_count       | 1     |
+| validate_password.policy             | LOW   |
+| validate_password.special_char_count | 1     |
++--------------------------------------+-------+
+14 rows in set (0.00 sec)
+
+## 创建新用户
+mysql> create user 'user'@'%' identified by 'abcd1234';
+Query OK, 0 rows affected (0.08 sec)
+
+````
+
 
 ## 开启远程连数据库
 
