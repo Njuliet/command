@@ -32,26 +32,34 @@ sudo ssserver --version
 ```sh
 sudo mkdir /etc/shadowsocks
 ```
-然后创建配置文件：
+### 配置文件
 
 ```sh
 sudo nano /etc/shadowsocks/config.json
 ```
-复制粘贴如下内容（注意修改密码“password”）：
+
+需要在`/etc/`目录下创建一个`shadowsocks.json`的文件, 配置文件内容如下:
 ```
-JSON
 {
-    "server":"::",
+    "server":"my_server_ip",
     "server_port":8388,
     "local_address": "127.0.0.1",
     "local_port":1080,
     "password":"mypassword",
     "timeout":300,
-    "method":"aes-256-cfb",
-    "fast_open": false
+    "method":"rc4-md5"
 }
 ```
-然后按Ctrl + O保存文件，Ctrl + X退出。
+各字段的含义：
+
+|name	|info|
+| :------ | :--------------------------------: |
+|server	|服务器 IP (IPv4/IPv6)，注意这也将是服务端监听的 IP 地址|
+|server_port|	服务器端口|
+|local_port|	本地端端口|
+|password|用来加密的密码|
+|timeout|	超时时间（秒）|
+|method|加密方法，"rc4-md5"|
 
 测试Shadowsocks配置
 首先记录下服务器的IP地址
