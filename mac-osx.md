@@ -80,3 +80,9 @@ $ sudo apachectl start
 ```bash
  $ defaults delete com.apple.desktopservices DSDontWriteNetworkStores
 ```
+## install gcc
+
+```
+$ brew tap homebrew/versions
+$ brew install gcc
+$ brew install binutils
